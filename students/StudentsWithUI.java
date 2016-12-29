@@ -1,16 +1,19 @@
 package students;
 
 import sim.portrayal.grid.ObjectGridPortrayal2D;
+import sim.portrayal.grid.HexaObjectGridPortrayal2D;
+import sim.portrayal.simple.*;
 import sim.engine.*;
 import sim.display.*;
 import javax.swing.*;
 import java.awt.*;
+import java.lang.*;
 
 public class StudentsWithUI extends GUIState {
 
 	public Display2D display;
 	public JFrame displayFrame;
-	ObjectGridPortrayal2D gridPortrayal = new ObjectGridPortrayal2D();
+	HexaObjectGridPortrayal2D gridPortrayal = new HexaObjectGridPortrayal2D();
 
 	public static void main(String[] args) {
 		StudentsWithUI vid = new StudentsWithUI();
@@ -35,8 +38,11 @@ public class StudentsWithUI extends GUIState {
 	public void setupPortrayals() {
 		Students students = (Students) state;
 		gridPortrayal.setField(students.yard);
-		gridPortrayal.setGridLines(true);
-		gridPortrayal.setBorder(true);
+		//gridPortrayal.setGridLines(true);
+		//gridPortrayal.setBorder(true);
+		gridPortrayal.setPortrayalForClass(Object.class,
+		                                   new CircledPortrayal2D(new RectanglePortrayal2D(1.0),
+						                          Color.blue, true));
 		display.reset();
 		display.repaint();
 		display.setBackdrop(Color.black);

@@ -14,6 +14,7 @@ public class Students extends SimState {
 
 	public void start() {
 		super.start();
+		yard.set(50, 50, new Object());
 	}
 
 	public static void main(String[] args) {
