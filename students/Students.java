@@ -15,6 +15,8 @@ public class Students extends SimState {
 	public void start() {
 		super.start();
 		yard.set(50, 50, new Object());
+		schedule.scheduleRepeating(schedule.EPOCH, 1, 
+				new Steppable() {public void step(SimState state) {}});
 	}
 
 	public static void main(String[] args) {
