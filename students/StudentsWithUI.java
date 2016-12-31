@@ -13,6 +13,7 @@ public class StudentsWithUI extends GUIState {
 
 	public Display2D display;
 	public JFrame displayFrame;
+	//ObjectGridPortrayal2D gridPortrayal = new ObjectGridPortrayal2D();
 	HexaObjectGridPortrayal2D gridPortrayal = new HexaObjectGridPortrayal2D();
 
 	public static void main(String[] args) {
@@ -40,9 +41,8 @@ public class StudentsWithUI extends GUIState {
 		gridPortrayal.setField(students.yard);
 		//gridPortrayal.setGridLines(true);
 		//gridPortrayal.setBorder(true);
-		gridPortrayal.setPortrayalForClass(Object.class,
-		                                   new CircledPortrayal2D(new RectanglePortrayal2D(1.0),
-						                          Color.blue, true));
+		gridPortrayal.setPortrayalForNull(new CircledPortrayal2D(new OvalPortrayal2D(1.0), Color.green, true));
+		gridPortrayal.setPortrayalForClass(Object.class, new CircledPortrayal2D(new OvalPortrayal2D(Color.red, 1.0), Color.blue, true));
 		display.reset();
 		display.repaint();
 		display.setBackdrop(Color.black);
