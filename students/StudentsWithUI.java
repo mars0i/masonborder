@@ -39,10 +39,10 @@ public class StudentsWithUI extends GUIState {
 	public void setupPortrayals() {
 		Students students = (Students) state;
 		gridPortrayal.setField(students.yard);
-		//gridPortrayal.setGridLines(true);
-		//gridPortrayal.setBorder(true);
-		gridPortrayal.setPortrayalForNull(new CircledPortrayal2D(new OvalPortrayal2D(1.0), Color.green, true));
-		gridPortrayal.setPortrayalForClass(Object.class, new CircledPortrayal2D(new OvalPortrayal2D(Color.red, 1.0), Color.blue, true));
+		gridPortrayal.setPortrayalForNull(new OvalPortrayal2D(1.0));
+		gridPortrayal.setPortrayalForClass(Object.class, new OvalPortrayal2D(Color.red, 1.0));
+		//gridPortrayal.setPortrayalForNull(new CircledPortrayal2D(new OvalPortrayal2D(1.0), Color.green, true));
+		//gridPortrayal.setPortrayalForClass(Object.class, new CircledPortrayal2D(new OvalPortrayal2D(Color.red, 1.0), Color.blue, true));
 		display.reset();
 		display.repaint();
 		display.setBackdrop(Color.black);
