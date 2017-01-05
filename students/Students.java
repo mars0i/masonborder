@@ -15,6 +15,11 @@ public class Students extends SimState {
 	public void start() {
 		super.start();
 
+		Object theObj = new Object();
+
+		yard.clear();
+		yard.set(0, 0, theObj);
+		/*
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 				if ((i%2)==0 || (j%2)==0) {
@@ -22,9 +27,18 @@ public class Students extends SimState {
 				}
 			}
 		}
+		*/
 
 		schedule.scheduleRepeating(schedule.EPOCH, 1, 
-				new Steppable() {public void step(SimState state) {}});
+				new Steppable() {
+					int i = 0;
+					public void step(SimState state) {
+						yard.set(i, i, null);
+						i++;
+						yard.set(i, i, theObj);
+						//yard.set(i, i, new Object());
+					}
+				});
 	}
 
 	public static void main(String[] args) {

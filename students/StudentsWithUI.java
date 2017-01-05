@@ -13,8 +13,8 @@ public class StudentsWithUI extends GUIState {
 
 	public Display2D display;
 	public JFrame displayFrame;
-	//ObjectGridPortrayal2D gridPortrayal = new ObjectGridPortrayal2D();
-	HexaObjectGridPortrayal2D gridPortrayal = new HexaObjectGridPortrayal2D();
+	ObjectGridPortrayal2D gridPortrayal = new ObjectGridPortrayal2D();
+	//HexaObjectGridPortrayal2D gridPortrayal = new HexaObjectGridPortrayal2D();
 
 	public static void main(String[] args) {
 		StudentsWithUI vid = new StudentsWithUI();
@@ -39,10 +39,10 @@ public class StudentsWithUI extends GUIState {
 	public void setupPortrayals() {
 		Students students = (Students) state;
 		gridPortrayal.setField(students.yard);
-		gridPortrayal.setPortrayalForNull(new OvalPortrayal2D(1.0));
-		gridPortrayal.setPortrayalForClass(Object.class, new OvalPortrayal2D(Color.red, 1.0));
+		//gridPortrayal.setPortrayalForNull(new OvalPortrayal2D(1.0));
+		//gridPortrayal.setPortrayalForClass(Object.class, new OvalPortrayal2D(Color.red, 1.0));
 		//gridPortrayal.setPortrayalForNull(new CircledPortrayal2D(new OvalPortrayal2D(1.0), Color.green, true));
-		//gridPortrayal.setPortrayalForClass(Object.class, new CircledPortrayal2D(new OvalPortrayal2D(Color.red, 1.0), Color.blue, true));
+		gridPortrayal.setPortrayalForClass(Object.class, new CircledPortrayal2D(new OvalPortrayal2D(Color.red, 1.0), Color.red, true));
 		display.reset();
 		display.repaint();
 		display.setBackdrop(Color.black);
